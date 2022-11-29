@@ -1289,7 +1289,6 @@
 //    ...arr1,
 //    ...arr2
 // }
-
 // console.log(obj3); // {   name: 'Javascript',  price: 1000,}
 
 // var defaultConfig = {
@@ -1313,4 +1312,65 @@
 // console.log(...arr);
 // định nghĩa lại lần nữa là dùng Rest params là dùng chung với cả thằng
 // Destructuring bằng cách sử dụng là chúng ta định nghĩa ra tham số
-// Spread là khi chúng ta dùng đối số để định nghĩa ra biến, và định nghĩa nó 
+// Spread là khi chúng ta dùng đối số để định nghĩa ra biến, và định nghĩa nó
+
+// function logger(a, b, ...params) {
+// function logger({ name, price, ...rest }) {
+// function logger([a, b, ...rest]) {
+// console.log(params);
+// console.log(name);
+// console.log(price);
+// console.log(rest);
+// console.log(a);
+// console.log(b);
+// }
+// logger([2, 4, 4, 2, 5, 1, 6])
+// logger(1, 2, 3, 4, 5, 6)
+// logger({
+//    name: 'Javascript',
+//    price: 1000,
+//    description: 'Description content',
+// })
+
+//Tagged template literals
+// function hightLight([first, ...strings], ...values) {
+// console.log('first: ', first);
+// console.log('strings: ', strings);
+// console.log('values: ', values);
+//    return values.reduce(
+//       (acc, curr) =>
+//          [...acc, `<span>${curr}</span>`, strings.shift()],
+//       [first]
+//    ).join('')
+// }
+// var brand = 'F8';
+// var course = 'Javascript';
+// const html = hightLight`Học lập trình ${course} tại ${brand}!`;
+
+// console.log(html);
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Modules: Import / Export
+// Option chaining (?.)
+
+// const object = {
+//    name: ' Alice',
+//    cat: {
+//       name: 'Dinah',
+//       cat2: {
+//          name: 'Dinah2',
+//          cat3: {
+//             name: 'Dinah3',
+//          }
+//       }
+//    }
+// }
+// if (obj?.cat?.cat2?.cat3) {
+//    console.log(obj.cat.cat2.cat3.name);
+// }
+
+const obj = {
+   getName(value) {
+      console.log(value);
+   }
+}
+obj.getName?.(123)
